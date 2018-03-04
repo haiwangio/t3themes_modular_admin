@@ -1,0 +1,7 @@
+#### READ BACKENDLAYOUTS DIRECTORY
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:t3themes_modular_admin/Configuration/TSconfig/Mod/WebLayout/BackendLayouts" extensions="txt,ts,typoscript">
+
+mod.wizards.newContentElement.wizardItems.common.elements.textmedia.tt_content_defValues {
+    header = Header default value!
+    header_layout = 100
+}

@@ -1,0 +1,120 @@
+<!-- Aside -->
+<aside class="sidebar">
+    <div class="sidebar-container">
+        <div class="sidebar-header">
+            <div class="brand">
+                <div class="logo">
+                    <span class="l l1"></span>
+                    <span class="l l2"></span>
+                    <span class="l l3"></span>
+                    <span class="l l4"></span>
+                    <span class="l l5"></span>
+                </div> <f:render section="LogoText" arguments="{_all}" /> </div>
+        </div>
+        <!--
+            RENDER TYPOSCRIPT NAVIGATION WITH FLUID
+        -->
+        <f:if condition="{mainnavigation}">
+            <!-- Static navbar -->
+            <nav class="menu">
+                <ul class="sidebar-menu metismenu" id="sidebar-menu">
+                    <f:for each="{mainnavigation}" as="navitem">
+                        <f:if condition="{navitem.children}">
+                            <f:then>
+                                <li class="{f:if(condition:navitem.current,then:'active')}{f:if(condition:navitem.active,then:'open')}">
+                                    <a><i class="fa fa-file-text-o"></i> {navitem.title}</a>
+                                    <ul class="sidebar-nav">
+                            			<f:for each="{navitem.children}" as="subpage">
+                            			<f:if condition="{subpage.children}">
+                            				<f:then>
+                                                <li class="{f:if(condition:subpage.current,then:'active')}{f:if(condition:subpage.active,then:'open')}">
+                                                    <a>{subpage.title}</a>
+                                                    <ul class="sidebar-nav">
+                            							<f:for each="{subpage.children}" as="subsubpage">
+                            		                        <li class="{f:if(condition:subsubpage.current,then:'active')}">
+                            		                            <a>{subsubpage.title}</a>
+                            		                        </li>
+                            							</f:for>
+                                                    </ul>
+                                                </li>
+                            				</f:then>
+                            				<f:else>
+                                                <li class="{f:if(condition:subpage.current,then:'active')}">
+                                                    <a class="" href="{subpage.link}">{subpage.title}</a>
+                                                </li>
+                            				</f:else>
+                            			</f:if>
+                            			</f:for>
+                                    </ul>
+                                </li>
+                            </f:then>
+                            <f:else>
+                                <li class="{f:if(condition:navitem.current,then:'active')}">
+                                    <a class="" href="{navitem.link}"><i class="fa fa-file-text-o"></i> {navitem.title}</a>
+                                </li>
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </ul>
+            </nav>
+        </f:if>
+    </div>
+    <footer class="sidebar-footer">
+        <ul class="sidebar-menu metismenu" id="customize-menu"><li><ul><li class="customize">
+            <div class="customize-item">
+                <div class="row customize-header">
+                    <div class="col-4"> </div>
+                    <div class="col-4"><label class="title">fixed</label></div>
+                    <div class="col-4"><label class="title">static</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label class="title">Sidebar:</label></div>
+                    <div class="col-4"><label><input class="radio" type="radio" name="sidebarPosition" value="sidebar-fixed"><span></span></label></div>
+                    <div class="col-4"><label><input class="radio" type="radio" name="sidebarPosition" value=""><span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label class="title">Header:</label></div>
+                    <div class="col-4"><label><input class="radio" type="radio" name="headerPosition" value="header-fixed"><span></span></label></div>
+                    <div class="col-4"><label><input class="radio" type="radio" name="headerPosition" value=""><span></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4"><label class="title">Footer:</label></div>
+                    <div class="col-4"><label><input class="radio" type="radio" name="footerPosition" value="footer-fixed"><span></span></label></div>
+                    <div class="col-4"><label><input class="radio" type="radio" name="footerPosition" value=""><span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="customize-item">
+                <ul class="customize-colors">
+                    <li><span class="color-item color-red" data-theme="red"></span></li>
+                    <li><span class="color-item color-orange" data-theme="orange"></span></li>
+                    <li><span class="color-item color-green active" data-theme=""></span></li>
+                    <li><span class="color-item color-seagreen" data-theme="seagreen"></span></li>
+                    <li><span class="color-item color-blue" data-theme="blue"></span></li>
+                    <li><span class="color-item color-purple" data-theme="purple"></span></li>
+                </ul>
+            </div>
+        </li></ul><a href=""><i class="fa fa-cog"></i> Customize </a></li></ul>
+    </footer>
+</aside>
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+<div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
+<div class="mobile-menu-handle"></div>
+
+<!-- SECTIONS START -->
+    <f:section name="LogoText"><f:spaceless>
+
+        <f:if condition="{t3themesConf.headerLogoText}">
+            <f:if condition="{t3themesConf.headerLogoText} != '_'">
+                <!-- LogoText -->{t3themesConf.headerLogoText->f:format.raw()}
+            </f:if>
+        </f:if>
+
+    </f:spaceless></f:section>
+

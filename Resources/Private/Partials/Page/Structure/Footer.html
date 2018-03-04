@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <!-- Footer -->
+    <f:if condition="{t3themesConf.footerTextColor}"><style type="text/css">.footerC{data.uid},.footerC{data.uid} a,.footerC{data.uid} p{color:{t3themesConf.footerTextColor}!important;}</style></f:if>
+        <f:switch expression="{t3themesConf.footerFullWidth}">
+            <!-- Background > Container -->
+            <f:case value="onlybg">
+                <footer class="footer footerC{data.uid}" style="{f:if(condition:'{t3themesConf.footerBgColor}',then:'background-color:{t3themesConf.footerBgColor};',else:'')}">
+                    <div class="container">
+
+                        <f:render section="LayoutInner" arguments="{_all}" />
+
+                    </div>
+                </footer>
+            </f:case>
+            <f:case value="container">
+                <!-- Background + Container -->
+                <footer class="footer footerC{data.uid} container" style="{f:if(condition:'{t3themesConf.footerBgColor}',then:'background-color:{t3themesConf.footerBgColor};',else:'')}">
+
+                    <f:render section="LayoutInner" arguments="{_all}" />
+
+                </footer>
+            </f:case>
+            <f:case default="TRUE">
+                <!-- Background (No Container) -->
+                <footer class="footer footerC{data.uid}" style="{f:if(condition:'{t3themesConf.footerBgColor}',then:'background-color:{t3themesConf.footerBgColor};',else:'')}">
+
+                    <f:render section="LayoutInner" arguments="{_all}" />
+
+                </footer>
+            </f:case>
+        </f:switch>
+    </footer>
+
+    <f:section name="LayoutInner">
+
+        <div class="footer-block buttons">
+            <f:if condition="{t3themesConf.colPos1}">
+                <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '{t3themesConf.colPos1}'}" />
+            </f:if>
+        </div>
+        <div class="footer-block author">
+            <f:if condition="{t3themesConf.colPos2}">
+                <f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '{t3themesConf.colPos2}'}" />
+            </f:if>
+        </div>
+
+    </f:section>
+
+</html>

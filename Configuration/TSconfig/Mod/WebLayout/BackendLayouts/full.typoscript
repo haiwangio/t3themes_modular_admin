@@ -1,0 +1,79 @@
+################################
+#### BACKENDLAYOUT: CLEAN ####
+################################
+mod {
+    web_layout {
+        BackendLayouts {
+            modular_adminfull {
+                title = Full, show sidebars and all columns
+                config {
+                  backend_layout {
+                    colCount = 4
+                    rowCount = 6
+                    rows {
+                      1 {
+                        columns {
+                          1 {
+                            name = LLL:EXT:t3themes_modular_admin/Resources/Private/Language/Backend.xlf:backend_layout.column.border
+                            colPos = 3
+                            colspan = 4
+                          }
+                        }
+                      }
+                      2 {
+                        columns {
+                          1 {
+                            name = TYPO3 Left
+                            colPos = 20
+                            rowspan = 4
+                          }
+                          2 {
+                            name = LLL:EXT:t3themes_modular_admin/Resources/Private/Language/Backend.xlf:backend_layout.column.normal
+                            colPos = 0
+                            colspan = 2
+                            rowspan = 4
+                          }
+                          3 {
+                            name = TYPO3 Right
+                            colPos = 21
+                            rowspan = 4
+                          }
+                        }
+                      }
+                      3 {
+                        columns {
+                            colspan = 4
+                        }
+                      }
+                      4 {
+                        columns {
+                            colspan = 4
+                        }
+                      }
+                      5 {
+                        columns {
+                            colspan = 4
+                        }
+                      }
+                      6 {
+                        columns {
+                          1 {
+                            name = LLL:EXT:t3themes_modular_admin/Resources/Private/Language/Backend.xlf:backend_layout.column.footer1
+                            colPos = 10
+                            colspan = 2
+                          }
+                          2 {
+                            name = LLL:EXT:t3themes_modular_admin/Resources/Private/Language/Backend.xlf:backend_layout.column.footer2
+                            colPos = 11
+                            colspan = 2
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                icon = EXT:t3themes_modular_admin/Resources/Public/images/BackendLayouts/default.gif
+            }
+        }
+    }
+}

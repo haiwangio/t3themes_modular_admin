@@ -1,0 +1,25 @@
+### RTE
+RTE.default {
+    preset = editorExtended
+    #contentCSS = typo3conf/ext/t3themes_modular_admin/Resources/Public/css/Rte.css
+    buttons.image.options.magic {
+        maxWidth = 1200  # Default: 300
+        maxHeight = 900  # Default: 1000
+    }
+}
+
+### RTE CONFIGS
+RTE.config {
+    tt_content.bodytext.preset = editorExtended
+    tt_content.bodytext {
+        types {
+            text {
+                preset = editorExtended
+            }
+            textmedia {
+                preset = editorExtended
+            }
+        }
+    }
+    tx_news_domain_model_news.bodytext.preset = editorExtended
+}

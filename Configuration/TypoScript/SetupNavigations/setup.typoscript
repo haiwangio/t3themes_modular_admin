@@ -1,0 +1,49 @@
+# Default ModularAdmin Main Navigation
+navigations.main = HMENU
+navigations.main {
+    name = ModularAdmin Main Navigation
+    wrap = <nav class="navbar navbar-light static-top"><a class="navbar-brand" href="/">Brand</a>|<a class="btn btn-primary" href="#">Sign In</a></nav>
+    1 = TMENU
+    1 {
+        expAll = 0
+        NO = 1
+        NO {
+            ATagParams = class=""
+            stdWrap.htmlSpecialChars = 1
+        }
+
+        IFSUB < .NO
+        IFSUB = 1
+        IFSUB {
+            stdWrap.append = TEXT
+            stdWrap.append.value = <span class="caret"></span>
+        }
+
+        ACT < .NO
+        ACT = 1
+        ACT {
+            ATagParams = class=""
+        }
+
+        CUR < .NO
+        CUR = 1
+        CUR {
+            ATagParams = class="active"
+        }
+
+        CURIFSUB < .ACT
+        CURIFSUB = 1
+        CURIFSUB {
+            ATagParams = class="active"
+        }
+    }
+    2 < .1
+    2.wrap = <small><em> |</em></small>
+
+}
+
+navigations.modular_admindemo = TEXT
+navigations.modular_admindemo {
+    name = ModularAdmin Demo
+    value = <div class="header-block header-block-buttons"><a href="#" class="btn btn-sm header-btn"><i class="fa fa-github-alt"></i> <span>Foo on GitHub</span></a><a href="#" class="btn btn-sm header-btn"><i class="fa fa-star"></i> <span>Star Us</span></a><a href="#" class="btn btn-sm header-btn"><i class="fa fa-cloud-download"></i> <span>Download .zip</span></a></div>
+}

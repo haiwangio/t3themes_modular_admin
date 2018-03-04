@@ -1,0 +1,26 @@
+{
+	"name": "salvatoreeckel/t3themes_modular_admin",
+	"description": "TYPO3 Themes ModularAdmin Extension for EXT:t3cms",
+	"keywords": [
+	    "TYPO3",
+	    "theme",
+	    "extension",
+		"t3themes_modular_admin"
+	],
+	"type": "typo3-cms-extension",
+	"homepage": "",
+	"support": {
+		"email": "salvaracer@gmx.de"
+	},
+	"authors": [
+		{
+			"name": "Salvatore Eckel",
+			"email": "salvaracer@gmx.de",
+			"role": "Developer"
+		}
+	],
+	"license": "GP-2.0+",
+	"time": "2017-11-21",
+
+	"require": {}
+}

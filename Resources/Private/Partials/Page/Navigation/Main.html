@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:if condition="{mainnavigation}">
+        <!-- Nav -->
+        <nav id="nav">
+            <ul>
+                <f:for each="{mainnavigation}" as="mainnavigationItem">
+                    <li class="{f:if(condition: mainnavigationItem.active, then:'current')} {f:if(condition: mainnavigationItem.children, then:'dropdown')}">
+                        <f:if condition="{mainnavigationItem.spacer}">
+                            <f:then>
+                                <p class="navbar-text">{mainnavigationItem.title}</p>
+                            </f:then>
+                            <f:else>
+                                <f:if condition="{mainnavigationItem.children}">
+                                    <f:then>
+                                        <a href="{mainnavigationItem.link}" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            {mainnavigationItem.title} <b class="caret"></b>
+                                        </a>
+                                        <ul>
+                                            <f:for each="{mainnavigationItem.children}" as="child">
+                                                <f:if condition="{child.spacer}">
+                                                    <f:then>
+                                                        <li class="dropdown-header">{child.title}</li>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <li class="{f:if(condition: child.active, then:'current')}">
+
+                                                            <f:if condition="{child.children}">
+                                                                <f:then>
+                                                                    <a href="{child.link}" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                        {child.title} <b class="caret"></b>
+                                                                    </a>
+                                                                    <ul>
+                                                                        <f:for each="{child.children}" as="subChild">
+                                                                            <f:if condition="{subChild.spacer}">
+                                                                                <f:then>
+                                                                                    <li class="dropdown-header">{subChild.title}</li>
+                                                                                </f:then>
+                                                                                <f:else>
+                                                                                    <li class="{f:if(condition: subChild.active, then:'current')}">
+                                                                                        <a href="{subChild.link}" target="{subChild.target}" title="{subChild.title}">{subChild.title}</a>
+                                                                                    </li>
+                                                                                </f:else>
+                                                                            </f:if>
+                                                                        </f:for>
+                                                                    </ul>
+                                                                </f:then>
+                                                                <f:else>
+                                                                    <a href="{child.link}" target="{child.target}" title="{child.title}">{child.title}</a>
+                                                                </f:else>
+                                                            </f:if>
+                                                        </li>
+                                                    </f:else>
+                                                </f:if>
+                                            </f:for>
+                                        </ul>
+                                    </f:then>
+                                    <f:else>
+                                        <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">{mainnavigationItem.title}</a>
+                                    </f:else>
+                                </f:if>
+                            </f:else>
+                        </f:if>
+                    </li>
+                </f:for>
+            </ul>
+        </nav>
+    </f:if>
+
+</html>

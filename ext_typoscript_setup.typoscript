@@ -1,0 +1,6 @@
+# Module configuration
+module.tx_t3themesmodular_admin {
+    view {
+        layoutRootPaths.0 = EXT:t3cms/Resources/Private/Layouts/
+    }
+}

@@ -1,0 +1,96 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	data-namespace-typo3-fluid="true"
+	xmlns:se="http://typo3.org/ns/SalvatoreEckel/T3cms/ViewHelpers">
+
+	<f:layout name="Default" />
+
+	<f:section name="Main">
+
+		<article class="content dashboard-page">
+			<!-- Min. 1 sidebars value is not empty -->
+			<f:if condition="{t3themesConf.sidebarLeft} || {t3themesConf.sidebarRight}">
+				<f:then>
+					<div class="row">
+						<f:render section="SidebarContentWithCol" arguments="{data:data,size:2,t3themesConf:t3themesConf,colPos:20,sidebarValue:t3themesConf.sidebarLeft}" />
+						<f:render section="MainContentWithCol" arguments="{_all}" />
+						<f:render section="SidebarContentWithCol" arguments="{data:data,size:2,t3themesConf:t3themesConf,colPos:21,sidebarValue:t3themesConf.sidebarRight}" />
+					</div>
+				</f:then>
+				<f:else>
+					<!-- No sidebars are set -->
+					<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+				</f:else>
+			</f:if>
+		</article>
+
+	</f:section>
+
+</html>
+
+<f:section name="SidebarContentWithCol">
+
+	<f:if condition="{sidebarValue}">
+		<f:if condition="{sidebarValue} != 'hide'">
+			<div class="col-sm-3">
+				<f:if condition="{sidebarValue} == '1' || {sidebarValue} == '2'">
+					<f:then>
+						<section class="box">
+		    				<f:cObject typoscriptObjectPath="lib.dynamicContentSlide" data="{pageUid: '{data.uid}', colPos: '{colPos}'}" />
+		    			</section>
+					</f:then>
+					<f:else>
+						<f:cObject typoscriptObjectPath="{sidebarValue}" />
+					</f:else>
+				</f:if>
+			</div>
+		</f:if>
+	</f:if>
+
+</f:section>
+
+<f:section name="MainContentWithCol">
+
+	<!-- Both are not empty -->
+	<f:if condition="{t3themesConf.sidebarLeft} && {t3themesConf.sidebarRight}">
+		<f:then>
+			<!-- Both are set as "hide" -> Dont wrap! -->
+			<f:if condition="{t3themesConf.sidebarLeft} == 'hide' && {t3themesConf.sidebarRight} == 'hide'">
+				<f:then>
+					<!-- ATTENTION! THE USERSETTING SAYS: DON'T WRAP! --></div><f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" /><div class="row">
+				</f:then>
+				<f:else>
+					<f:if condition="{t3themesConf.sidebarLeft} != 'hide' && {t3themesConf.sidebarRight} != 'hide'">
+						<f:then>
+							<!-- BOTH are NOT SET AS "hide" -> Make it small width -->
+							<div class="col-sm-6">
+					    		<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+							</div>
+						</f:then>
+						<f:else>
+							<!-- BOTH are NOT SET AS "hide" -> Make it medium width -->
+							<div class="col-sm-9">
+					    		<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+							</div>
+						</f:else>
+					</f:if>
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<!-- Only one sidebar has a value & its value is not "hide" -->
+			<f:if condition="{t3themesConf.sidebarLeft} == 'hide' || {t3themesConf.sidebarRight} == 'hide'">
+				<f:then>
+					<!-- The one sidebar with a value has the value "hide" -> Dont wrap it! -->
+					<!-- ATTENTION! THE USERSETTING SAYS: DON'T WRAP! --></div><f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" /><div class="row">
+				</f:then>
+				<f:else>
+					<!-- We have exactly 1 sidebar -> Make it medium width -->
+					<div class="col-sm-9">
+			    		<f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '0'}" />
+					</div>
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+
+</f:section>

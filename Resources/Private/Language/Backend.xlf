@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2017-09-19T05:11:59Z" product-name="t3themes_modular_admin">
+        <header/>
+        <body>
+
+            <trans-unit id="backend_layout.default">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.default_clean">
+                <source>Default, Clean (100%)</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.default_2_columns">
+                <source>Default, 2 Columns</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.default_subnavigation">
+                <source>Default, Subnavigation</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.default_subnavigation_right">
+                <source>Default, Subnavigation Right</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.subnav">
+                <source>Sub Navigation (NOEDIT)</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.left">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.normal">
+                <source>Normal</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.right">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.border">
+                <source>Border</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.middle1">
+                <source>Middle: Left</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.middle2">
+                <source>Middle: Center</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.middle3">
+                <source>Middle: Right</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.main2">
+                <source>Normal 2</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.special1">
+                <source>Special 1</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.special2">
+                <source>Special 2</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.special3">
+                <source>Special 3</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.special4">
+                <source>Special 4</source>
+            </trans-unit>
+
+            <trans-unit id="backend_layout.column.footer1">
+                <source>Footer Buttons Left</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.footer2">
+                <source>Footer Author Right</source>
+            </trans-unit>
+            <trans-unit id="backend_layout.column.footer3">
+                <source>Footer 3</source>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>
