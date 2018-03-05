@@ -36,6 +36,9 @@
             <trans-unit id="backend_layout.column.border">
                 <source>Border</source>
             </trans-unit>
+            <trans-unit id="backend_layout.column.flux">
+                <source>Flux colPos</source>
+            </trans-unit>
 
             <trans-unit id="backend_layout.column.middle1">
                 <source>Middle: Left</source>

@@ -43,6 +43,15 @@ mod {
                                     }
                                 }
                             }
+                            4 {
+                                columns {
+                                    1 {
+                                        name = LLL:EXT:t3themes_modular_admin/Resources/Private/Language/Backend.xlf:backend_layout.column.flux
+                                        colPos = 18181
+                                        colspan = 12
+                                    }
+                                }
+                            }
                         }
                     }
                 }
