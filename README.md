@@ -17,7 +17,7 @@ This is a ready to use template for TYPO3. Together with EXT:t3cms you have an e
 
 ### Contribution guidelines ###
 
-* We are happy, of you contribute with us!
+* We are happy, when you contribute with us!
 * Merge requests are wished,
 * PSR-2 guidlines
 
