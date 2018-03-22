@@ -14,7 +14,7 @@ $extensionKey = 't3themes_modular_admin';
     'T3themes Bootstrap 4 Theme for TYPO3 CMS - Backend Layouts'
 );
 
-// BackendLayouts
+// Customize RTE
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::registerPageTSConfigFile(
     $extensionKey,
     'Configuration/TSconfig/RTE.txt',
