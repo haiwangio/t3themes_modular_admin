@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 
-	<f:if condition="{t3themesConf.headerTextColor}"><style type="text/css">.headerC{data.uid},.headerC{data.uid} a,.headerC{data.uid} p{color:{t3themesConf.headerTextColor}!important;}</style></f:if>
+	<f:render section="OverrideStyles" arguments="{t3themesConf:t3themesConf,data:data}" />
 
 	<f:switch expression="{t3themesConf.headerFullWidth}">
 		<f:case value="onlybg">
@@ -93,6 +93,10 @@
 					</f:case>
 				</f:switch>
 
+		</f:section>
+
+		<f:section name="OverrideStyles">
+			<f:if condition="{t3themesConf.headerTextColor}"><style type="text/css">.headerC{data.uid},.headerC{data.uid} a,.headerC{data.uid} p{color:{t3themesConf.headerTextColor};}</style></f:if>
 		</f:section>
 	<!-- SECTIONS END -->
 
