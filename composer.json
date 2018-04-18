@@ -21,6 +21,12 @@
 	],
 	"license": "GP-2.0+",
 	"time": "2017-11-21",
-
-	"require": {}
+	"require": {
+		"typo3/cms-core": "^8.7 || ^9.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"SalvatoreEckel\\T3themesBootstrap4\\": "Classes"
+		}
+	}
 }
