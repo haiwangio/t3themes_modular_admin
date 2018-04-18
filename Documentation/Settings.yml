@@ -7,7 +7,7 @@ conf.py:
   copyright: 2018
   project: TYPO3 Themes - Modular Admin
   version: 0.9
-  release: 0.9.1
+  release: 0.9.2
   latex_documents:
   - - Index
     - t3themes_modular_admin.tex
