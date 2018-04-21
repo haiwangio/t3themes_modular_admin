@@ -13,7 +13,7 @@ $EM_CONF[$_EXTKEY] = [
     'uploadfolder' => '0',
     'createDirs' => '',
     'clearCacheOnLoad' => 0,
-    'version' => '0.9.2',
+    'version' => '0.9.3',
     'constraints' => [
         'depends' => [
             'typo3' => '7.6.18-9.99.99',
@@ -21,5 +21,10 @@ $EM_CONF[$_EXTKEY] = [
         ],
         'conflicts' => [],
         'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' =>  [
+            'SalvatoreEckel\\T3themesModularAdmin\\' => 'Classes',
+        ],
     ],
 ];

@@ -26,7 +26,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"SalvatoreEckel\\T3themesBootstrap4\\": "Classes"
+			"SalvatoreEckel\\T3themesModularAdmin\\": "Classes"
 		}
 	}
 }
