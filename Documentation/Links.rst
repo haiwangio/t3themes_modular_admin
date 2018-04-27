@@ -18,4 +18,4 @@ Links
 	https://forge.typo3.org/projects/extension-t3themes_modular_admin/issues
 
 :Git Repository:
-	https://bitbucket.org/salvaracer/t3themes_modular_admin
+	https://bitbucket.org/SalvatoreEckel/t3themes_modular_admin
