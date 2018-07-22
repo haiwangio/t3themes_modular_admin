@@ -65,7 +65,8 @@
 
 			<!-- HEADER CONTENT -->
 				<f:switch expression="{t3themesConf.headerDisplay}">
-					<f:case value="shownav">
+					<f:case value="hidenav"><!-- Nothing --></f:case>
+					<f:case default="TRUE">
 						<f:if condition="{f:cObject(typoscriptObjectPath:'{t3themesConf.headerTsnavigation}')}">
 							<f:then>
 								<!-- SHOW CHOOSEN NAVIGATION -->
@@ -74,22 +75,6 @@
 							<f:else>
 							</f:else>
 						</f:if>
-					</f:case>
-					<f:case value="showads">
-						<!-- RENDER ADS CODE -->
-						<f:if condition="{t3themesConf.headerContentAdsCode}">
-							<f:then>
-								{t3themesConf.headerContentAdsCode->f:format.raw()}
-							</f:then>
-							<f:else>
-								<!-- ADS CODE IS EMPTY -> ShOW THEME DEFAULT -->
-								<p>Here could be your ad!<br/>Here could be your ad!<br/>Here could be your ad!</p>
-							</f:else>
-						</f:if>
-					</f:case>
-					<!-- TODO: RENDER tt_content  -->
-					<f:case value="showuid">
-						<h3>[[tt_content]]</h3>
 					</f:case>
 				</f:switch>
 
