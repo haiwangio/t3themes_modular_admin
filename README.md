@@ -5,7 +5,7 @@ This is a ready to use template for TYPO3. Together with EXT:t3cms you have an e
 ### General Information ###
 
 * t3themes_modular_admin
-* v0.9.5
+* v0.9.6
 
 ### How do I get set up? ###
 
